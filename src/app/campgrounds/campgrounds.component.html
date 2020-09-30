@@ -1,2 +1,6 @@
 <p>hello from app-campgrounds</p>
-<p>{{campgrounds[0].name}}</p>
+<p>{{campgrounds}}</p>
+
+<div *ngFor="let campground of campgrounds">
+    <p>{{campground.author.username}}</p>
+</div>

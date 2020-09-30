@@ -34,11 +34,18 @@ private handleError<T>(operation = 'operation', result?: T) {
   };
 }
 
+  // INDEX
   getCampgrounds(): Observable<Campground[]> {
     return this.http.get<Campground[]>(this.campgroundsUrl)
     .pipe(
       catchError(this.handleError<Campground[]>('getCampgrounds', []))
     );
   }
+
+  // NEW
+  // CREATE
+  // EDIT
+  // UPDATE
+  // DESTROY
 }
 

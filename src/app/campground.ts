@@ -4,4 +4,6 @@ export interface Campground {
     price: string;
     image: string;
     description: string;
+    author: any;
+    comment: any;
 }

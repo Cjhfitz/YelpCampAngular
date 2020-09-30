@@ -18,7 +18,10 @@ export class CampgroundsComponent implements OnInit {
 
   getCampgrounds(): void {
     this.campgroundService.getCampgrounds()
-    .subscribe(campgrounds => this.campgrounds = campgrounds);
+    .subscribe(campgrounds => {
+      console.log(campgrounds);
+      this.campgrounds = campgrounds;
+    });
   }
 
 
