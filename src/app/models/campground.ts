@@ -1,9 +1,9 @@
 export interface Campground {
-    id: number;
+    // id: number;
     name: string;
     price: string;
     image: string;
     description: string;
-    author: any;
-    comment: any;
+    // author: any;
+    // comment: any;
 }

@@ -3,7 +3,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-import { Campground } from '../app/campground';
+import { Campground } from './models/campground';
 import { Observable, of } from 'rxjs';
 
 @Injectable({
@@ -13,7 +13,7 @@ export class CampgroundService {
 
   constructor(private http: HttpClient) { }
 
-  private campgroundsUrl = 'http://localhost:3000/campgrounds';
+  private campgroundsUrl = 'http://localhost:3000';
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -36,7 +36,7 @@ private handleError<T>(operation = 'operation', result?: T) {
 
   // INDEX
   getCampgrounds(): Observable<Campground[]> {
-    return this.http.get<Campground[]>(this.campgroundsUrl)
+    return this.http.get<Campground[]>(this.campgroundsUrl + '/campgrounds')
     .pipe(
       catchError(this.handleError<Campground[]>('getCampgrounds', []))
     );
@@ -44,6 +44,12 @@ private handleError<T>(operation = 'operation', result?: T) {
 
   // NEW
   // CREATE
+  addCampground(campground: Campground): Observable<Campground> {
+    return this.http.post<Campground>(this.campgroundsUrl + '/campgrounds', campground, this.httpOptions)
+    .pipe(
+      catchError(this.handleError('addCampground', campground))
+    );
+  }
   // EDIT
   // UPDATE
   // DESTROY
