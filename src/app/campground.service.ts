@@ -42,7 +42,13 @@ private handleError<T>(operation = 'operation', result?: T) {
     );
   }
 
-  // NEW
+  // SHOW
+  showCampground(campgroundId: string): Observable<Campground> {
+    return this.http.get<Campground>(this.campgroundsUrl + '/campgrounds/' + campgroundId)
+    .pipe();
+
+  }
+
   // CREATE
   addCampground(campground: Campground): Observable<Campground> {
     return this.http.post<Campground>(this.campgroundsUrl + '/campgrounds', campground, this.httpOptions)

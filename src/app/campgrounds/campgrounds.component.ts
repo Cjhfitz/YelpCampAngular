@@ -21,20 +21,37 @@ export class CampgroundsComponent implements OnInit {
     description: 'TEST'
   };
 
+  campgroundId = '5f6ac53729130300177a9dfe';
+  campground: Campground;
+
   constructor(private campgroundService: CampgroundService) { }
 
+  // INDEX
   getCampgrounds(): void {
     this.campgroundService.getCampgrounds()
     .subscribe(campgrounds => this.campgrounds = campgrounds);
   }
 
+  // SHOW
+  showCampground(campgroundId: string): void {
+    this.campgroundService.showCampground(this.campgroundId)
+    .subscribe(campground => this.campground = campground);
+  }
+
+  // CREATE
   addCampground(campground: Campground): void {
     this.campgroundService.addCampground(campground).subscribe();
   }
 
+  // EDIT
+
+  // UPDATE
+
+  // DESTROY
+
 
   ngOnInit(): void {
-
+    
   }
 
 
