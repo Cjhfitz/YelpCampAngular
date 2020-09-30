@@ -57,7 +57,16 @@ private handleError<T>(operation = 'operation', result?: T) {
     );
   }
   // EDIT
+  editCampground(campgroundId: string): Observable<Campground> {
+    return this.http.get<Campground>(this.campgroundsUrl + '/campgrounds/' + campgroundId + '/edit')
+    .pipe();
+  }
+
   // UPDATE
+  updateCampground(campgroundId: string, campground: Campground): Observable<Campground> {
+    return this.http.put<Campground>(this.campgroundsUrl + '/campgrounds/' + campgroundId, campground)
+    .pipe();
+  }
   // DESTROY
 }
 

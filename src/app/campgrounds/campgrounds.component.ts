@@ -44,14 +44,21 @@ export class CampgroundsComponent implements OnInit {
   }
 
   // EDIT
+  editCampground(campgroundId: string): void {
+    this.campgroundService.editCampground(this.campgroundId)
+    .subscribe(campground => this.campground = campground);
+  }
 
   // UPDATE
-
+  updateCampground(campgroundId: string): void {
+    this.campgroundService.updateCampground(campgroundId, this.campground)
+    .subscribe();
+  }
   // DESTROY
 
 
   ngOnInit(): void {
-    
+
   }
 
 
