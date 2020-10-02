@@ -13,16 +13,16 @@ import { CampgroundService } from '../campground.service';
 export class CampgroundsComponent implements OnInit {
 
   campgrounds: Campground[];
-
-  testCampground: Campground = {
-    name: 'test',
-    price: '1000000',
-    image: 'testAngular',
-    description: 'TEST'
-  };
-
-  campgroundId = '5f6ac53729130300177a9dfe';
   campground: Campground;
+
+  // testCampground: Campground = {
+  //   name: 'test',
+  //   price: '1000000',
+  //   image: 'testAngular',
+  //   description: 'TEST'
+  // };
+
+  // campgroundId = '5f6ac53729130300177a9dfe';
 
   constructor(private campgroundService: CampgroundService) { }
 
@@ -33,32 +33,32 @@ export class CampgroundsComponent implements OnInit {
   }
 
   // SHOW
-  showCampground(campgroundId: string): void {
-    this.campgroundService.showCampground(this.campgroundId)
-    .subscribe(campground => this.campground = campground);
-  }
+  // showCampground(campgroundId: string): void {
+  //   this.campgroundService.showCampground(this.campgroundId)
+  //   .subscribe(campground => this.campground = campground);
+  // }
 
   // CREATE
-  addCampground(campground: Campground): void {
-    this.campgroundService.addCampground(campground).subscribe();
-  }
+  // addCampground(campground: Campground): void {
+  //   this.campgroundService.addCampground(campground).subscribe();
+  // }
 
   // EDIT
-  editCampground(campgroundId: string): void {
-    this.campgroundService.editCampground(this.campgroundId)
-    .subscribe(campground => this.campground = campground);
-  }
+  // editCampground(campgroundId: string): void {
+  //   this.campgroundService.editCampground(this.campgroundId)
+  //   .subscribe(campground => this.campground = campground);
+  // }
 
   // UPDATE
-  updateCampground(campgroundId: string): void {
-    this.campgroundService.updateCampground(campgroundId, this.campground)
-    .subscribe();
-  }
+  // updateCampground(campgroundId: string): void {
+  //   this.campgroundService.updateCampground(campgroundId, this.campground)
+  //   .subscribe();
+  // }
   // DESTROY
 
 
   ngOnInit(): void {
-
+    this.getCampgrounds();
   }
 
 

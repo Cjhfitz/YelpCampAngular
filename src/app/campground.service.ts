@@ -38,7 +38,7 @@ private handleError<T>(operation = 'operation', result?: T) {
   getCampgrounds(): Observable<Campground[]> {
     return this.http.get<Campground[]>(this.campgroundsUrl + '/campgrounds')
     .pipe(
-      catchError(this.handleError<Campground[]>('getCampgrounds', []))
+      // catchError(this.handleError<Campground[]>('getCampgrounds', []))
     );
   }
 

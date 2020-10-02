@@ -1,10 +1,13 @@
-<p>hello from app-campgrounds</p>
-<!-- <p>{{campgrounds}}</p>
+<p>Hello from app-campgrounds!</p>
 
-<div *ngFor="let campground of campgrounds">
-    <p>{{campground.name}}</p>
-</div> -->
-
-<div>{{campground.name}}</div>
-
-<button (click)="updateCampground('5f6ac53729130300177a9dfe')">UPDATE</button>
+<div class="container">
+    <div *ngFor="let campground of campgrounds" class="item campground">
+        <img src="{{campground.image}}" alt="campground image">
+        <h1>{{campground.name}}</h1>
+        <p>${{campground.price}}/night</p>
+        <p>{{campground.description}}</p>
+    
+        <a href="#">More Info</a>
+    
+    </div>
+</div>

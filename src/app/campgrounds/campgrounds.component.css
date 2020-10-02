@@ -1,0 +1,14 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.item {
+    border: 1px solid black;
+    margin: 0 auto;
+}
+
+.campground {
+    text-align: center;
+}
