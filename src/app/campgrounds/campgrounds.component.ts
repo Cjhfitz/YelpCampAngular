@@ -33,10 +33,10 @@ export class CampgroundsComponent implements OnInit {
   }
 
   // SHOW
-  // showCampground(campgroundId: string): void {
-  //   this.campgroundService.showCampground(this.campgroundId)
-  //   .subscribe(campground => this.campground = campground);
-  // }
+  showCampground(campgroundId: string): void {
+    this.campgroundService.showCampground(campgroundId)
+    .subscribe(campground => this.campground = campground);
+  }
 
   // CREATE
   // addCampground(campground: Campground): void {

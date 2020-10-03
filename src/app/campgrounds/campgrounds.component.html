@@ -1,4 +1,7 @@
-<p>Hello from app-campgrounds!</p>
+<div>
+    <h1>Welcome to YelpCamp</h1>
+    <p>View our hand-picked capgrounds from all over the world!</p>
+</div>
 
 <div class="container">
     <div *ngFor="let campground of campgrounds" class="item campground">
@@ -7,7 +10,7 @@
         <p>${{campground.price}}/night</p>
         <p>{{campground.description}}</p>
     
-        <a href="#">More Info</a>
+        <a routerLink="/campground/{{campground._id}}">More Info</a>
     
     </div>
 </div>

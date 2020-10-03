@@ -1,5 +1,5 @@
 export interface Campground {
-    // id: number;
+    _id: number;
     name: string;
     price: string;
     image: string;

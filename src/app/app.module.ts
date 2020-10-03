@@ -7,11 +7,13 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { CampgroundsComponent } from './campgrounds/campgrounds.component';
+import { CampgroundComponent } from './campground/campground.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CampgroundsComponent
+    CampgroundsComponent,
+    CampgroundComponent
   ],
   imports: [
     BrowserModule,
