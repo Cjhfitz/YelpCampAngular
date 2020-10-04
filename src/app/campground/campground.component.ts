@@ -14,6 +14,8 @@ export class CampgroundComponent implements OnInit {
 
   campground: Campground;
 
+  // ActivatedRoute allows us to pull id from the URL
+  // Location enables us to go back to previous route
   constructor(private route: ActivatedRoute, private campgroundService: CampgroundService, private location: Location) { }
 
   showCampground(): void {
