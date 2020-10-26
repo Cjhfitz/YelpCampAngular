@@ -9,7 +9,7 @@ import { NewCampgroundComponent } from './new-campground/new-campground.componen
 const routes: Routes = [
 {path: '', component: CampgroundsComponent},  // '' is the root route
 {path: 'campground/:id', component: CampgroundComponent},
-{path: 'campgrounds/new', component: NewCampgroundComponent}
+{path: 'newCampground', component: NewCampgroundComponent}
 ];
 
 @NgModule({

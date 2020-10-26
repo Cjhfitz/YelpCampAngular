@@ -13,7 +13,7 @@ import { CampgroundService } from '../campground.service';
 export class CampgroundsComponent implements OnInit {
 
   campgrounds: Campground[];
-  // campground: Campground;
+  campground: Campground;
 
   // testCampground: Campground = {
   //   name: 'test',
@@ -31,12 +31,6 @@ export class CampgroundsComponent implements OnInit {
     this.campgroundService.getCampgrounds()
     .subscribe(campgrounds => this.campgrounds = campgrounds);
   }
-
-  // SHOW
-  // showCampground(campgroundId: string): void {
-  //   this.campgroundService.showCampground(campgroundId)
-  //   .subscribe(campground => this.campground = campground);
-  // }
 
   // CREATE
   // addCampground(campground: Campground): void {
