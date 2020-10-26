@@ -13,10 +13,9 @@ export class NewCampgroundComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private location: Location, private campgroundService: CampgroundService) { }
 
-  campground: Campground;
 
-  addCampground(): void {
-    this.campgroundService.addCampground(this.campground)
+  addCampground(campground: Campground): void {
+    this.campgroundService.addCampground(campground)
     .subscribe();
   }
 

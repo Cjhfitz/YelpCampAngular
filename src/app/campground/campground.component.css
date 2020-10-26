@@ -1,0 +1,10 @@
+.container {
+    display: flex;
+    align-items: flex-start;
+}
+
+.item {
+    /* margin: t/b l/r */
+    margin: 0 auto;
+    text-align: center;
+}
