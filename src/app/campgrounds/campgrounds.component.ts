@@ -13,7 +13,6 @@ import { CampgroundService } from '../campground.service';
 export class CampgroundsComponent implements OnInit {
 
   campgrounds: Campground[];
-  campground: Campground;
 
   // testCampground: Campground = {
   //   name: 'test',
