@@ -11,7 +11,7 @@ import { Campground } from '../models/campground';
 })
 export class NewCampgroundComponent implements OnInit {
 
-  campground: Campground;
+  campground = new Campground();
 
   constructor(private route: ActivatedRoute, private location: Location, private campgroundService: CampgroundService) { }
 
@@ -19,6 +19,10 @@ export class NewCampgroundComponent implements OnInit {
   addCampground(): void {
     this.campgroundService.addCampground(this.campground)
     .subscribe();
+  }
+
+  printCampground(): void {
+    console.log(this.campground);
   }
 
   ngOnInit(): void {

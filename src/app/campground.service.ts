@@ -46,7 +46,6 @@ private handleError<T>(operation = 'operation', result?: T) {
   showCampground(campgroundId: string): Observable<Campground> {
     return this.http.get<Campground>(this.campgroundsUrl + '/campgrounds/' + campgroundId)
     .pipe();
-
   }
 
   // CREATE

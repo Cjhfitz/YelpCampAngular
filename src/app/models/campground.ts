@@ -1,5 +1,5 @@
-export interface Campground {
-    _id: number;
+export class Campground {
+    id: number;
     name: string;
     price: string;
     image: string;
