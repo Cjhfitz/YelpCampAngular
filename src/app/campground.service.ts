@@ -63,7 +63,8 @@ private handleError<T>(operation = 'operation', result?: T) {
 
   // UPDATE
   updateCampground(campgroundId: string, campground: Campground): Observable<Campground> {
-    return this.http.put<Campground>(this.campgroundsUrl + '/campgrounds/' + campgroundId, campground)
+    console.log(campground);
+    return this.http.put<Campground>(this.campgroundsUrl + '/campgrounds/' + campgroundId, campground, this.httpOptions)
     .pipe();
   }
   // DESTROY
