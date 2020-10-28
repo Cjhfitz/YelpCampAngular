@@ -48,7 +48,7 @@ private handleError<T>(operation = 'operation', result?: T) {
     .pipe();
   }
 
-  // CREATE
+  // NEW
   addCampground(campground: Campground): Observable<Campground> {
     return this.http.post<Campground>(this.campgroundsUrl + '/campgrounds', campground, this.httpOptions)
     .pipe(

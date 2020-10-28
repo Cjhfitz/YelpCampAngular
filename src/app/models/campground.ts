@@ -1,5 +1,6 @@
 export class Campground {
-    id: number;
+    // tslint:disable-next-line:variable-name
+    _id: number;
     name: string;
     price: string;
     image: string;

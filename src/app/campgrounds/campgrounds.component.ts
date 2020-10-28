@@ -12,16 +12,7 @@ import { CampgroundService } from '../campground.service';
 })
 export class CampgroundsComponent implements OnInit {
 
-  campgrounds: Campground[];
-
-  // testCampground: Campground = {
-  //   name: 'test',
-  //   price: '1000000',
-  //   image: 'testAngular',
-  //   description: 'TEST'
-  // };
-
-  // campgroundId = '5f6ac53729130300177a9dfe';
+  campgrounds: Campground[] = [];
 
   constructor(private campgroundService: CampgroundService) { }
 
@@ -29,6 +20,11 @@ export class CampgroundsComponent implements OnInit {
   getCampgrounds(): void {
     this.campgroundService.getCampgrounds()
     .subscribe(campgrounds => this.campgrounds = campgrounds);
+  }
+
+  printCampgrounds(): void {
+    console.log(this.campgrounds);
+    console.log(typeof this.campgrounds);
   }
 
   // CREATE

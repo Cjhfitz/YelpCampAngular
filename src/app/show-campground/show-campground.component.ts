@@ -7,10 +7,10 @@ import { Campground } from '../models/campground';
 
 @Component({
   selector: 'app-campground',
-  templateUrl: './campground.component.html',
-  styleUrls: ['./campground.component.css']
+  templateUrl: './show-campground.component.html',
+  styleUrls: ['./show-campground.component.css']
 })
-export class CampgroundComponent implements OnInit {
+export class ShowCampgroundComponent implements OnInit {
 
   campground: Campground;
 
