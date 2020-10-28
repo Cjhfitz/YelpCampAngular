@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';  // forgot to import this
 import { CampgroundService } from '../campground.service';
 import { Campground } from '../models/campground';
 
@@ -10,21 +11,27 @@ import { Campground } from '../models/campground';
 })
 export class EditCampgroundComponent implements OnInit {
 
-  campground = new Campground();
+  campground: Campground;
 
   constructor(private route: ActivatedRoute, private campgroundService: CampgroundService, private location: Location) { }
 
   editCampground(): void {
+    // get id from URL
     const id = this.route.snapshot.paramMap.get('id');
+
+    // retrieve campground and store it
     this.campgroundService.editCampground(id).subscribe(campground => this.campground = campground);
   }
 
-  // showCampground(): void {
-  //   const id = this.route.snapshot.paramMap.get('id');  // + can be used to convert a string to a number
-  //   this.campgroundService.showCampground(id).subscribe(campground => this.campground = campground);
-  // }
+  // UPDATE
+  updateCampground(): void {
+    console.log(this.campground);
+    this.campgroundService.updateCampground(this.campground._id.toString(), this.campground)
+    .subscribe();
+  }
 
   ngOnInit(): void {
+    this.editCampground();
   }
 
 }

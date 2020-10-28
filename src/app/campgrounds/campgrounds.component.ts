@@ -38,11 +38,7 @@ export class CampgroundsComponent implements OnInit {
   //   .subscribe(campground => this.campground = campground);
   // }
 
-  // UPDATE
-  // updateCampground(campgroundId: string): void {
-  //   this.campgroundService.updateCampground(campgroundId, this.campground)
-  //   .subscribe();
-  // }
+
   // DESTROY
 
 

@@ -1,26 +1,25 @@
 <div>
     <form>
         <div>
-            <label>{{campground.name}}</label>
+            <label>Name</label>
             <input type="text" name="name" [(ngModel)]="campground.name">
         </div>
 
         <div>
-            <label>{{campground.image}}</label>
+            <label>Image</label>
             <input type="text" name="image" [(ngModel)]="campground.image">
         </div>
 
         <div>
-            <label>{{campground.price}}</label>
+            <label>Price</label>
             <input type="number" name="price" min="0.01" step="0.01" [(ngModel)]="campground.price">
         </div>
 
         <div>
-            <label>{{campground.description}}</label>
+            <label>Description</label>
             <input type="text" name="description" [(ngModel)]="campground.description">
         </div>
-
-        <button (click)="editCampground()">Submit</button>
+        <button (click)="updateCampground()">Submit</button>
     </form>
   </div>
 
