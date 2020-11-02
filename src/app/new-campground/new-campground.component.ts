@@ -11,12 +11,19 @@ import { Campground } from '../models/campground';
 })
 export class NewCampgroundComponent implements OnInit {
 
-  campground = new Campground();
+  campground: Campground = {
+    _id: 0,
+    name: '',
+    image: '',
+    price: '',
+    description: ''
+  };
 
   constructor(private route: ActivatedRoute, private location: Location, private campgroundService: CampgroundService) { }
 
 
   addCampground(): void {
+    console.log(this.campground);
     this.campgroundService.newCampground(this.campground)
     .subscribe();
   }

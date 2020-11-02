@@ -1,4 +1,4 @@
-export class Campground {
+export interface Campground {
     // tslint:disable-next-line:variable-name
     _id: number;
     name: string;
