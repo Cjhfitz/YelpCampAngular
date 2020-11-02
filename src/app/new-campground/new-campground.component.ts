@@ -17,7 +17,7 @@ export class NewCampgroundComponent implements OnInit {
 
 
   addCampground(): void {
-    this.campgroundService.addCampground(this.campground)
+    this.campgroundService.newCampground(this.campground)
     .subscribe();
   }
 
