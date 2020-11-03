@@ -27,6 +27,11 @@ export class ShowCampgroundComponent implements OnInit {
     this.location.back();
   }
 
+  deleteCampground(): void {
+    const id = this.route.snapshot.paramMap.get('id');
+    this.campgroundService.deleteCampground(id).subscribe();
+  }
+
   ngOnInit(): void {
     this.showCampground();
   }

@@ -61,6 +61,7 @@ private handleError<T>(operation = 'operation', result?: T) {
    * @param campground a json object representing a campground
    */
   newCampground(campground: Campground): Observable<Campground> {
+    console.log(campground);
     return this.http.post<Campground>(this.campgroundsUrl + '/campgrounds', campground, this.httpOptions)
     .pipe(
       // catchError(this.handleError('addCampground', campground))
@@ -87,9 +88,11 @@ private handleError<T>(operation = 'operation', result?: T) {
     return this.http.put<Campground>(this.campgroundsUrl + '/campgrounds/' + campgroundId, campground, this.httpOptions)
     .pipe();
   }
+
   // DESTROY
-  /**
-   * To Do add delete()
-   */
+  deleteCampground(campgroundId: string): Observable<{}> {
+    return this.http.delete(this.campgroundsUrl + '/campgrounds/' + campgroundId, this.httpOptions)
+    .pipe();
+  }
 }
 

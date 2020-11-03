@@ -4,5 +4,6 @@
         <div>{{campground.name}}</div>
         <button (click)="goBack()">go back</button>
         <a routerLink="/campground/{{campground._id}}/edit">Edit</a>
+        <button (click)='deleteCampground()'>DELETE</button>
     </div>
 </div>

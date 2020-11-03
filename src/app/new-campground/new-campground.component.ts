@@ -11,6 +11,12 @@ import { Campground } from '../models/campground';
 })
 export class NewCampgroundComponent implements OnInit {
 
+  /**
+   * Problem:  Able to update campground w/o defining the fields, but when sending the request to the server empty entries were created
+   * Solution: defined properties with empty values to be updated and then sent to the server
+   *
+   * I think before only the view was being changed so nothing was actually being sent to the server
+   */
   campground: Campground = {
     _id: 0,
     name: '',
@@ -19,7 +25,7 @@ export class NewCampgroundComponent implements OnInit {
     description: ''
   };
 
-  constructor(private route: ActivatedRoute, private location: Location, private campgroundService: CampgroundService) { }
+  constructor(private location: Location, private campgroundService: CampgroundService) { }
 
 
   addCampground(): void {
