@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { catchError, map, tap } from 'rxjs/operators';
 
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 
 import { Campground } from './models/campground';
-import { Observable, of } from 'rxjs';
+import { Observable, of, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -20,18 +20,19 @@ export class CampgroundService {
   };
 
 // tslint:disable-next-line:typedef
-private handleError<T>(operation = 'operation', result?: T) {
-  return (error: any): Observable<T> => {
+private handleError(error: HttpErrorResponse) {
+  // checks if the error is a client-side or network error
+  // ErrorEvent is a JS object
+  if (error.error instanceof ErrorEvent) {
+    console.log('An error occured', error.error.message);
+  } else {
+    // else the occured with the backend and a HTTP response
+    // was sent with an error code.
+    console.error(`Backend returned code ${error.status}`, +
+    `body was ${error.error}`);
+  }
 
-    // TODO: send the error to remote logging infrastructure
-    console.error(error); // log to console instead
-
-    // TODO: better job of transforming error for user consumption
-    // this.log(`${operation} failed: ${error.message}`);
-
-    // Let the app keep running by returning an empty result.
-    return of(result as T);
-  };
+  return throwError('Something bad happened;  please try again later.');
 }
 
   // INDEX
@@ -41,7 +42,7 @@ private handleError<T>(operation = 'operation', result?: T) {
   getCampgrounds(): Observable<Campground[]> {
     return this.http.get<Campground[]>(this.campgroundsUrl + '/campgrounds')
     .pipe(
-      // catchError(this.handleError<Campground[]>('getCampgrounds', []))
+      catchError(this.handleError)
     );
   }
 
@@ -52,7 +53,9 @@ private handleError<T>(operation = 'operation', result?: T) {
    */
   showCampground(campgroundId: string): Observable<Campground> {
     return this.http.get<Campground>(this.campgroundsUrl + '/campgrounds/' + campgroundId)
-    .pipe();
+    .pipe(
+      catchError(this.handleError)
+    );
   }
 
   // NEW
@@ -64,7 +67,7 @@ private handleError<T>(operation = 'operation', result?: T) {
     console.log(campground);
     return this.http.post<Campground>(this.campgroundsUrl + '/campgrounds', campground, this.httpOptions)
     .pipe(
-      // catchError(this.handleError('addCampground', campground))
+      catchError(this.handleError)
     );
   }
   // EDIT
@@ -74,7 +77,9 @@ private handleError<T>(operation = 'operation', result?: T) {
    */
   editCampground(campgroundId: string): Observable<Campground> {
     return this.http.get<Campground>(this.campgroundsUrl + '/campgrounds/' + campgroundId + '/edit')
-    .pipe();
+    .pipe(
+      catchError(this.handleError)
+    );
   }
 
   // UPDATE
@@ -86,13 +91,17 @@ private handleError<T>(operation = 'operation', result?: T) {
   updateCampground(campgroundId: string, campground: Campground): Observable<Campground> {
     console.log(campground);
     return this.http.put<Campground>(this.campgroundsUrl + '/campgrounds/' + campgroundId, campground, this.httpOptions)
-    .pipe();
+    .pipe(
+      catchError(this.handleError)
+    );
   }
 
   // DESTROY
   deleteCampground(campgroundId: string): Observable<{}> {
     return this.http.delete(this.campgroundsUrl + '/campgrounds/' + campgroundId, this.httpOptions)
-    .pipe();
+    .pipe(
+      catchError(this.handleError)
+    );
   }
 }
 
