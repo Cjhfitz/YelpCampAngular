@@ -20,6 +20,7 @@ export class CampgroundsComponent implements OnInit {
   getCampgrounds(): void {
     this.campgroundService.getCampgrounds()
     .subscribe(res => {
+      // console.log(res.status);
       this.campgrounds = res.body;
     });
   }
