@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { catchError, map, tap } from 'rxjs/operators';
 
-import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders, HttpResponse } from '@angular/common/http';
 
 import { Campground } from './models/campground';
 import { Observable, of, throwError } from 'rxjs';
@@ -22,7 +22,6 @@ export class CampgroundService {
 // tslint:disable-next-line:typedef
 private handleError(error: HttpErrorResponse) {
   // checks if the error is a client-side or network error
-  // ErrorEvent is a JS object
   if (error.error instanceof ErrorEvent) {
     console.log('An error occured', error.error.message);
   } else {
@@ -39,8 +38,8 @@ private handleError(error: HttpErrorResponse) {
   /**
    * Makes request for data on all campgrounds in DB
    */
-  getCampgrounds(): Observable<Campground[]> {
-    return this.http.get<Campground[]>(this.campgroundsUrl + '/campgrounds')
+  getCampgrounds(): Observable<HttpResponse<Campground[]>> {
+    return this.http.get<Campground[]>(this.campgroundsUrl + '/campgrounds', {observe: 'response'})
     .pipe(
       catchError(this.handleError)
     );

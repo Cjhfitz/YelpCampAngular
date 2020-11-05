@@ -19,7 +19,9 @@ export class CampgroundsComponent implements OnInit {
   // INDEX
   getCampgrounds(): void {
     this.campgroundService.getCampgrounds()
-    .subscribe(campgrounds => this.campgrounds = campgrounds);
+    .subscribe(res => {
+      this.campgrounds = res.body;
+    });
   }
 
   printCampgrounds(): void {
