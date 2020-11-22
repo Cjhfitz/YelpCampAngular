@@ -25,26 +25,6 @@ export class CampgroundsComponent implements OnInit {
     });
   }
 
-  printCampgrounds(): void {
-    console.log(this.campgrounds);
-    console.log(typeof this.campgrounds);
-  }
-
-  // CREATE
-  // addCampground(campground: Campground): void {
-  //   this.campgroundService.addCampground(campground).subscribe();
-  // }
-
-  // EDIT
-  // editCampground(campgroundId: string): void {
-  //   this.campgroundService.editCampground(this.campgroundId)
-  //   .subscribe(campground => this.campground = campground);
-  // }
-
-
-  // DESTROY
-
-
   ngOnInit(): void {
     this.getCampgrounds();
   }

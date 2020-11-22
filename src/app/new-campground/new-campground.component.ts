@@ -25,6 +25,9 @@ export class NewCampgroundComponent implements OnInit {
     description: ''
   };
 
+  // used for toggling CSS
+  isSubmitted = false;
+
   constructor(private location: Location, private campgroundService: CampgroundService) { }
 
 
@@ -37,6 +40,8 @@ export class NewCampgroundComponent implements OnInit {
   printCampground(): void {
     console.log(this.campground);
   }
+
+  onSubmit(): void { this.isSubmitted = true; }
 
   ngOnInit(): void {
 

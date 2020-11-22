@@ -1,21 +1,23 @@
 <div>
-    <form>
-        <div>
+    <h1>Add a new campground!</h1>
+    <form id="newForm">
+        <div class="formItem">
             <label>Name</label>
             <input type="text" name="name" [(ngModel)]="campground.name">
+            
         </div>
 
-        <div>
+        <div class="formItem">
             <label>Image</label>
             <input type="text" name="image" [(ngModel)]="campground.image">
         </div>
 
-        <div>
+        <div class="formItem">
             <label>Price</label>
             <input type="number" name="price" min="0.01" step="0.01" [(ngModel)]="campground.price">
         </div>
 
-        <div>
+        <div class="formItem">
             <label>Description</label>
             <input type="text" name="description" [(ngModel)]="campground.description">
         </div>
@@ -23,3 +25,5 @@
         <button (click)="addCampground()">Submit</button>
     </form>
   </div>
+
+<!-- validation logic, customize presentation, error handling  -->

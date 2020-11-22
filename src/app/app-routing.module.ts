@@ -7,10 +7,15 @@ import { NewCampgroundComponent } from './new-campground/new-campground.componen
 import { EditCampgroundComponent } from './edit-campground/edit-campground.component';
 
 // define object defining the path and which component to show
+/**
+ * To do
+ *  - add route /campgrounds and associate it with CampgroundsComponent
+ *  - redirect root to /campgrounds(CampgroundsComponent)
+ */
 const routes: Routes = [
 {path: '', component: CampgroundsComponent},  // '' is the root route
 {path: 'campground/:id', component: ShowCampgroundComponent},
-{path: 'newCampground', component: NewCampgroundComponent},
+{path: 'new', component: NewCampgroundComponent},
 {path: 'campground/:id/edit', component: EditCampgroundComponent}
 ];
 

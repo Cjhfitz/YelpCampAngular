@@ -28,6 +28,7 @@ export class EditCampgroundComponent implements OnInit {
     console.log(this.campground);
     this.campgroundService.updateCampground(this.campground._id.toString(), this.campground)
     .subscribe();
+    this.location.back();
   }
 
   ngOnInit(): void {
