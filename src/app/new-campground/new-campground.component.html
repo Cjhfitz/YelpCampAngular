@@ -1,24 +1,24 @@
-<div>
-    <h1>Add a new campground!</h1>
-    <form id="newForm">
+<div class="container">
+    <h1 class="item">Add a new campground!</h1>
+    <form id="newForm" class="item">
         <div class="formItem">
-            <label>Name</label>
+            <label>Name:</label>
             <input type="text" name="name" [(ngModel)]="campground.name">
             
         </div>
 
         <div class="formItem">
-            <label>Image</label>
+            <label>Image:</label>
             <input type="text" name="image" [(ngModel)]="campground.image">
         </div>
 
         <div class="formItem">
-            <label>Price</label>
+            <label>Price:</label>
             <input type="number" name="price" min="0.01" step="0.01" [(ngModel)]="campground.price">
         </div>
 
         <div class="formItem">
-            <label>Description</label>
+            <label>Description:</label>
             <input type="text" name="description" [(ngModel)]="campground.description">
         </div>
 
