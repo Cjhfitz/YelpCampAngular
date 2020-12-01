@@ -8,9 +8,10 @@
     text-transform: uppercase;
 }
 
-/* #newForm {
-    border: 1px solid black;
-} */
+#newForm {
+    /* border: 1px solid black; */
+    /* background: #756f6f73; */
+}
 
 .formItem {
     width: 100%;
@@ -37,7 +38,7 @@ button {
     font-family:'Roboto',sans-serif;
     font-weight:300;
     color:#FFFFFF;
-    background-color:#4eb5f1;
+    background-color:#131957;
     text-align:center;
     transition: all 0.2s;
 }
