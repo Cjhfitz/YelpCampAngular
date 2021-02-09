@@ -7,9 +7,10 @@
 
 
 <div class="container">
-    <div *ngFor="let campground of campgrounds" class="item campground card">
+    <div *ngFor="let campground of campgrounds" class="card">
         <div class="card__image">
-            <img class="card__image" src="{{campground.image}}" alt="campground image">
+            <!-- <img class="card__image" src="{{campground.image}}" alt="campground image"> -->
+            <div class="card__image" style="background-image: url({{campground.image}}); background-repeat: no-repeat; background-size: cover;" >
         </div>
         <div class="card__text">
             <h1>{{campground.name}}</h1>
