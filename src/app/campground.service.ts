@@ -57,7 +57,7 @@ private handleError(error: HttpErrorResponse) {
     );
   }
 
-  // NEW
+  // Create
   /**
    * Makes a request to add a new campground entry to the DB
    * @param campground a json object representing a campground

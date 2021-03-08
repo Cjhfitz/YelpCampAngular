@@ -15,12 +15,14 @@
 
 .card__image {
     width: 100%;
-    height: 12.5rem;
-    border: 1px solid lawngreen;
+    height: 100%;
+    /* border: 1px solid lawngreen; */
 }
 
 .card__text {
     width: 100%;
-    height: 12.5rem;
-    border: 1px solid purple;
+    height: 100%;
+    text-align: center;
+    padding-bottom: 1.25rem;
+    /* border: 1px solid purple; */
 }

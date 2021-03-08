@@ -12,12 +12,18 @@ import { EditCampgroundComponent } from './edit-campground/edit-campground.compo
  *  - add route /campgrounds and associate it with CampgroundsComponent
  *  - redirect root to /campgrounds(CampgroundsComponent)
  */
+// const routes: Routes = [
+// {path: 'campgrounds', component: CampgroundsComponent},  // '' is the root route
+// {path: 'campgrounds/:id', component: ShowCampgroundComponent},
+// {path: 'campgrounds/new', component: NewCampgroundComponent},
+// {path: 'campgrounds/:id/edit', component: EditCampgroundComponent}
+// ];
+
 const routes: Routes = [
-{path: '', component: CampgroundsComponent},  // '' is the root route
-{path: 'campground/:id', component: ShowCampgroundComponent},
-{path: 'new', component: NewCampgroundComponent},
-{path: 'campground/:id/edit', component: EditCampgroundComponent}
-];
+  {path: '', component: CampgroundsComponent},
+  {path: 'campgrounds', component: CampgroundsComponent},  // '' is the root route
+  {path: 'campgrounds/new', component: NewCampgroundComponent}
+  ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

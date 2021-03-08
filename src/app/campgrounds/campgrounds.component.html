@@ -8,14 +8,14 @@
 
 <div class="container">
     <div *ngFor="let campground of campgrounds" class="card">
-        <div class="card__image">
-            <!-- <img class="card__image" src="{{campground.image}}" alt="campground image"> -->
+        <!-- <div class="card__image">
+            <img class="card__image" src="{{campground.image}}" alt="campground image">
             <div class="card__image" style="background-image: url({{campground.image}}); background-size: cover; background-repeat: no-repeat; background-position: center center;">
-        </div>
+        </div> -->
         <div class="card__text">
-            <h1>{{campground.name}}</h1>
-            <p>${{campground.price}}/night</p>
-            <p>{{campground.description}}</p>
+            <h1 class="card__text__name">{{campground.name}}</h1>
+            <p class="card__text__price">${{campground.price}}/night</p>
+            <p class="card__text__description">{{campground.description}}</p>
             <a routerLink="/campground/{{campground._id}}">More Info</a>
         </div>
     </div>
